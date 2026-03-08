@@ -1,8 +1,8 @@
 var adventure = "4.17.0"
 dependencies {
     compileOnly 'io.papermc.paper:paper-api:1.21.4-R0.1-SNAPSHOT'
-    implementation 'com.github.hamza-cskn:obliviate-utils:2.0.6'
-    implementation 'com.github.Anon8281:UniversalScheduler:0.1.6'
+    implementation 'mc.obliviate:obliviate-utils:4.0.2'
+    implementation 'gg.drak:UniversalScheduler:1.5-SNAPSHOT'
 }
 
 project.setLibsDirName('../../target')
