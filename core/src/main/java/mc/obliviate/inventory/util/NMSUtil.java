@@ -28,5 +28,4 @@ public class NMSUtil {
     public static Class<?> getCraftBukkitClass(final String name) throws ClassNotFoundException {
         return Class.forName(cbClass(name));
     }
-
 }
