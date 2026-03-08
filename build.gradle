@@ -1,9 +1,7 @@
 plugins {
     id 'java'
-    id 'java-library'
     id 'maven-publish'
     id 'com.gradleup.shadow' version '8.3.6'
-    id("co.uzzu.dotenv.gradle") version "4.0.0"
 }
 
 group 'mc.obliviate'
@@ -11,14 +9,12 @@ version '4.1.13.3'
 compileJava.options.encoding = 'UTF-8'
 
 java {
-    toolchain {
-        languageVersion = JavaLanguageVersion.of(21)
-    }
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
 }
 
 subprojects {
     apply plugin: 'java'
-    apply plugin: 'java-library'
     apply plugin: 'maven-publish'
     apply plugin: 'com.gradleup.shadow'
 
@@ -40,11 +36,13 @@ subprojects {
         maven { url 'https://repo.codemc.org/repository/streamline-essentials/' }
     }
 
-    tasks.shadowJar {
+    artifacts {
+        archives shadowJar
+    }
+
+    shadowJar {
         archiveClassifier.set("")
         archiveFileName.set(project.name + "-" + project.version + ".jar")
-        // Output dosyasını build klasörü altına veriyoruz, target değil
-        destinationDirectory.set(file("${project.buildDir}/libs"))
     }
 
     publishing {
@@ -74,9 +72,9 @@ subprojects {
             }
         }
     }
-    
-    // Publish task'ının shadowJar'ı beklemesini sağlıyoruz
-    tasks.withType(PublishToMavenRepository) {
-        dependsOn tasks.shadowJar
-    }
+}
+
+wrapper {
+    gradleVersion = '9.3.1'
+    distributionType = Wrapper.DistributionType.ALL
 }

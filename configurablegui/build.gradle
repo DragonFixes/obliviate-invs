@@ -1,7 +1,5 @@
 dependencies {
     compileOnly project(':core')
     compileOnly 'io.papermc.paper:paper-api:1.21.4-R0.1-SNAPSHOT'
-    implementation shadow('mc.obliviate:obliviate-utils:4.0.2')
+    compileOnly('mc.obliviate:obliviate-utils:4.0.2')
 }
-
-project.setLibsDirName('../../target')

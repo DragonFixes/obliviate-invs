@@ -2,5 +2,7 @@ dependencies {
     compileOnly project(':core')
     compileOnly 'io.papermc.paper:paper-api:1.21.4-R0.1-SNAPSHOT'
 }
-//test
-project.setLibsDirName('../../target')
+
+compileJava {
+    dependsOn(":core:shadowJar")
+}

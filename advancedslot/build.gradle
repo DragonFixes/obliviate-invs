@@ -1,7 +1,5 @@
 dependencies {
     compileOnly project(':core')
     compileOnly 'io.papermc.paper:paper-api:1.21.4-R0.1-SNAPSHOT'
-    implementation shadow('gg.drak:UniversalScheduler:1.5-SNAPSHOT')
+    compileOnly('gg.drak:UniversalScheduler:1.5-SNAPSHOT')
 }
-
-project.setLibsDirName('../../target')

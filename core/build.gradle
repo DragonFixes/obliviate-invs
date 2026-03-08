@@ -4,5 +4,3 @@ dependencies {
     implementation shadow('mc.obliviate:obliviate-utils:4.0.2')
     implementation shadow('gg.drak:UniversalScheduler:1.5-SNAPSHOT')
 }
-
-project.setLibsDirName('../../target')
