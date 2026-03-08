@@ -33,7 +33,7 @@ subprojects {
         mavenLocal()
         maven { url 'https://repo.maven.apache.org/maven2/' }
         maven { url 'https://repo.papermc.io/repository/maven-public/'}
-        maven { url 'https://repo.codemc.org/repository/streamline-essentials/' }
+        maven { url 'https://repo.codemc.io/repository/streamline-essentials/' }
     }
 
     artifacts {
